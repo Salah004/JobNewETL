@@ -7,33 +7,33 @@
   DTS:CreatorName="ANEM\s.lachi"
   DTS:DTSID="{28D75776-7F6A-4696-A2D8-634E3D3EDF00}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.3002.92"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
   DTS:LocaleID="1036"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{AF8B2F66-A543-4148-80BF-B9022362D367}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{E33AA71D-2EF2-4F94-8217-13DD380468AB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[HTTP Connection Manager]"
+      DTS:refId="Package.ConnectionManagers[Elasticsearch]"
       DTS:CreationName="HTTP (KingswaySoft)"
-      DTS:DTSID="{8BC08F5E-0B98-4885-8E24-15E6F4D5CE12}"
-      DTS:ObjectName="HTTP Connection Manager">
+      DTS:DTSID="{F4002D36-F940-4F08-9A7D-FA25A620B078}"
+      DTS:ObjectName="Elasticsearch">
       <DTS:ObjectData>
         <ConnectionManager
-          ConnectionString="BaseUrl=http://172.20.28.92:8081/api/Rapprochements/;AuthenticationMode=Credentials;PathToTokenFile=;AccessTokenRequestLocation=HttpHeader;Domain=;UserName=;ProxyMode=NoProxy;ProxyUsername=;ProxyServer=;ProxyServerPort=0;ThrottleRate=0;ServiceTimeout=120;RetryOnIntermittentErrors=True;ChunkSize=0;CertificateLocation=Store;PathToCertificate=;IgnoreCertificateErrors=False;CustomHeaders={};HttpMethod=POST" />
+          ConnectionString="BaseUrl=http://localhost:9200/;AuthenticationMode=Credentials;PathToTokenFile=;AccessTokenRequestLocation=HttpHeader;Domain=;UserName=;ProxyMode=NoProxy;ProxyUsername=;ProxyServer=;ProxyServerPort=0;ThrottleRate=0;ServiceTimeout=120;RetryOnIntermittentErrors=True;ChunkSize=0;CertificateLocation=Store;CertificateSubject=;PathToCertificate=;IgnoreCertificateErrors=False;CustomHeaders={};HttpMethod=POST" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[HTTP Connection Manager 1]"
+      DTS:refId="Package.ConnectionManagers[JobNewsAPI]"
       DTS:CreationName="HTTP (KingswaySoft)"
-      DTS:DTSID="{F4002D36-F940-4F08-9A7D-FA25A620B078}"
-      DTS:ObjectName="HTTP Connection Manager 1">
+      DTS:DTSID="{8BC08F5E-0B98-4885-8E24-15E6F4D5CE12}"
+      DTS:ObjectName="JobNewsAPI">
       <DTS:ObjectData>
         <ConnectionManager
-          ConnectionString="BaseUrl=http://172.20.28.92:9200/;AuthenticationMode=Credentials;PathToTokenFile=;AccessTokenRequestLocation=HttpHeader;Domain=;UserName=;ProxyMode=NoProxy;ProxyUsername=;ProxyServer=;ProxyServerPort=0;ThrottleRate=0;ServiceTimeout=120;RetryOnIntermittentErrors=True;ChunkSize=0;CertificateLocation=Store;PathToCertificate=;IgnoreCertificateErrors=False;CustomHeaders={};HttpMethod=POST" />
+          ConnectionString="BaseUrl=http://172.20.28.92:8081/api/Rapprochements/;AuthenticationMode=Credentials;PathToTokenFile=;AccessTokenRequestLocation=HttpHeader;Domain=;UserName=;ProxyMode=NoProxy;ProxyUsername=;ProxyServer=;ProxyServerPort=0;ThrottleRate=0;ServiceTimeout=120;RetryOnIntermittentErrors=True;ChunkSize=0;CertificateLocation=Store;CertificateSubject=;PathToCertificate=;IgnoreCertificateErrors=False;CustomHeaders={};HttpMethod=POST" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -61,7 +61,7 @@
               name="JSON Destination"
               usesDispositions="true"
               validateExternalMetadata="False"
-              version="3">
+              version="4">
               <properties>
                 <property
                   dataType="System.String"
@@ -145,8 +145,8 @@
               <connections>
                 <connection
                   refId="Package\Tâche de flux de données\JSON Destination.Connections[HTTP (KingswaySoft)]"
-                  connectionManagerID="Package.ConnectionManagers[HTTP Connection Manager 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[HTTP Connection Manager 1]"
+                  connectionManagerID="Package.ConnectionManagers[Elasticsearch]"
+                  connectionManagerRefId="Package.ConnectionManagers[Elasticsearch]"
                   description="ProductivityPack"
                   name="HTTP (KingswaySoft)" />
               </connections>
@@ -190,6 +190,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[_JSON]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[_JSON]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[_JSON]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -208,6 +218,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[_RowIndex]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[_RowIndex]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[_RowIndex]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -226,6 +246,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[RapprochementId]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[RapprochementId]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[RapprochementId]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -243,6 +273,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[TauxRapprochement]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[TauxRapprochement]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[TauxRapprochement]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -261,6 +301,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[DemandeurId]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[DemandeurId]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[DemandeurId]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -279,6 +329,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[NomAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NomAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[NomAr]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -297,6 +357,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[NomFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NomFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[NomFr]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -315,6 +385,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[PrenomAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[PrenomAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[PrenomAr]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -333,6 +413,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[PrenomFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[PrenomFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[PrenomFr]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -351,6 +441,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[Email]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[Email]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[Email]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -369,6 +469,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[OffreId]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[OffreId]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[OffreId]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -387,6 +497,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[NombreCandidats]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NombreCandidats]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[NombreCandidats]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -405,6 +525,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[NombrePostesCree]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NombrePostesCree]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[NombrePostesCree]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -423,6 +553,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[DateInscription]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[DateInscription]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[DateInscription]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -441,6 +581,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[NombrePlacesLibres]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NombrePlacesLibres]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[NombrePlacesLibres]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -459,6 +609,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[Experience]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[Experience]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[Experience]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -477,6 +637,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[CommuneAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[CommuneAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[CommuneAr]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -495,6 +665,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[CommuneFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[CommuneFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[CommuneFr]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -513,6 +693,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[WilayaAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[WilayaAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[WilayaAr]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -531,6 +721,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[WilayaFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[WilayaFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[WilayaFr]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -549,6 +749,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[RaisonSociale]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[RaisonSociale]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[RaisonSociale]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -567,6 +777,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[MetierAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[MetierAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[MetierAr]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -585,6 +805,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[MetierFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[MetierFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[MetierFr]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -603,6 +833,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[NiveauInstructionAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NiveauInstructionAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[NiveauInstructionAr]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -621,6 +861,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[NiveauInstructionFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NiveauInstructionFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[NiveauInstructionFr]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -639,6 +889,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[NiveauQualificationAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NiveauQualificationAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[NiveauQualificationAr]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -657,6 +917,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[NiveauQualificationFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NiveauQualificationFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[NiveauQualificationFr]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -675,6 +945,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[TypeContratFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[TypeContratFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[TypeContratFr]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -693,6 +973,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[TypeContratAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[TypeContratAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[TypeContratAr]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -711,6 +1001,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[CategorieContratFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[CategorieContratFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[CategorieContratFr]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -729,6 +1029,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[CategorieContratAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[CategorieContratAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[CategorieContratAr]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -747,6 +1057,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[DispositifFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[DispositifFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[DispositifFr]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -765,6 +1085,16 @@
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
                           name="AsyncOutputColumnID">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[DispositifAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous error output column of this input column."
+                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[DispositifAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous default output column of this input column."
+                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\JSON Destination.Outputs[Default Output].Columns[DispositifAr]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -971,30 +1301,6 @@
                       name="ErrorColumn"
                       specialFlags="2" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[ColumnName]"
-                      dataType="wstr"
-                      length="4000"
-                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[ColumnName]"
-                      name="ColumnName" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[ParentId]"
-                      dataType="wstr"
-                      length="4000"
-                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[ParentId]"
-                      name="ParentId" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[Input]"
-                      dataType="wstr"
-                      length="4000"
-                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[Input]"
-                      name="Input" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[ParentInput]"
-                      dataType="wstr"
-                      length="4000"
-                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[ParentInput]"
-                      name="ParentInput" />
-                    <outputColumn
                       refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[ErrorMessage]"
                       dataType="wstr"
                       length="4000"
@@ -1016,6 +1322,300 @@
                       length="255"
                       lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[HttpResponseCodeName]"
                       name="HttpResponseCodeName" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[RapprochementId]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[RapprochementId]"
+                      name="RapprochementId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[TauxRapprochement]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[TauxRapprochement]"
+                      name="TauxRapprochement"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[DemandeurId]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[DemandeurId]"
+                      name="DemandeurId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NomAr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NomAr]"
+                      name="NomAr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NomFr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NomFr]"
+                      name="NomFr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[PrenomAr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[PrenomAr]"
+                      name="PrenomAr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[PrenomFr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[PrenomFr]"
+                      name="PrenomFr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[Email]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[Email]"
+                      name="Email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[OffreId]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[OffreId]"
+                      name="OffreId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NombreCandidats]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NombreCandidats]"
+                      name="NombreCandidats"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NombrePostesCree]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NombrePostesCree]"
+                      name="NombrePostesCree"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[DateInscription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[DateInscription]"
+                      name="DateInscription"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NombrePlacesLibres]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NombrePlacesLibres]"
+                      name="NombrePlacesLibres"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[Experience]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[Experience]"
+                      name="Experience"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[CommuneAr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[CommuneAr]"
+                      name="CommuneAr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[CommuneFr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[CommuneFr]"
+                      name="CommuneFr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[WilayaAr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[WilayaAr]"
+                      name="WilayaAr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[WilayaFr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[WilayaFr]"
+                      name="WilayaFr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[RaisonSociale]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[RaisonSociale]"
+                      name="RaisonSociale"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[MetierAr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[MetierAr]"
+                      name="MetierAr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[MetierFr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[MetierFr]"
+                      name="MetierFr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NiveauInstructionAr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NiveauInstructionAr]"
+                      name="NiveauInstructionAr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NiveauInstructionFr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NiveauInstructionFr]"
+                      name="NiveauInstructionFr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NiveauQualificationAr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NiveauQualificationAr]"
+                      name="NiveauQualificationAr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NiveauQualificationFr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[NiveauQualificationFr]"
+                      name="NiveauQualificationFr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[TypeContratFr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[TypeContratFr]"
+                      name="TypeContratFr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[TypeContratAr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[TypeContratAr]"
+                      name="TypeContratAr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[CategorieContratFr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[CategorieContratFr]"
+                      name="CategorieContratFr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[CategorieContratAr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[CategorieContratAr]"
+                      name="CategorieContratAr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[DispositifFr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[DispositifFr]"
+                      name="DispositifFr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[DispositifAr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[DispositifAr]"
+                      name="DispositifAr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[_RowIndex]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[_RowIndex]"
+                      name="_RowIndex"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[_JSON]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Error Output].Columns[_JSON]"
+                      name="_JSON"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1320,6 +1920,56 @@
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
+                <output
+                  refId="Package\Tâche de flux de données\JSON Destination.Outputs[Orphaned Children Error Output]"
+                  isErrorOut="true"
+                  name="Orphaned Children Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Orphaned Children Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Orphaned Children Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Orphaned Children Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Orphaned Children Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Orphaned Children Error Output].Columns[Input Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Orphaned Children Error Output].Columns[Input Name]"
+                      name="Input Name" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Orphaned Children Error Output].Columns[Column Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Orphaned Children Error Output].Columns[Column Name]"
+                      name="Column Name" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Orphaned Children Error Output].Columns[Column Value]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Orphaned Children Error Output].Columns[Column Value]"
+                      name="Column Value" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Orphaned Children Error Output].Columns[Parent Input Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Orphaned Children Error Output].Columns[Parent Input Name]"
+                      name="Parent Input Name" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\JSON Destination.Outputs[Orphaned Children Error Output].Columns[Parent Column Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\JSON Destination.Outputs[Orphaned Children Error Output].Columns[Parent Column Name]"
+                      name="Parent Column Name" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
               </outputs>
             </component>
             <component
@@ -1399,8 +2049,8 @@
               <connections>
                 <connection
                   refId="Package\Tâche de flux de données\JSON Source.Connections[HTTP (KingswaySoft)]"
-                  connectionManagerID="Package.ConnectionManagers[HTTP Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[HTTP Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[JobNewsAPI]"
+                  connectionManagerRefId="Package.ConnectionManagers[JobNewsAPI]"
                   description="ProductivityPack"
                   name="HTTP (KingswaySoft)" />
               </connections>
@@ -2110,12 +2760,12 @@
           Id="Package\Tâche de flux de données\JSON Source"
           TopLeft="287,66" />
         <NodeLayout
-          Size="166,42"
+          Size="160,42"
           Id="Package\Tâche de flux de données\JSON Destination"
           TopLeft="282,237" />
         <EdgeLayout
           Id="Package\Tâche de flux de données.Paths[Root]"
-          TopLeft="362.5,108">
+          TopLeft="361,108">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
