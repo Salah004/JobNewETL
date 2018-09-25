@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{4229C176-762D-4E27-9C57-5678D1F89BCD}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{2C40299E-663A-471B-9C2F-8F59C110D00B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,7 +23,7 @@
       DTS:ObjectName="Elasticsearch">
       <DTS:ObjectData>
         <ConnectionManager
-          ConnectionString="BaseUrl=http://localhost:9200/;AuthenticationMode=Credentials;PathToTokenFile=;AccessTokenRequestLocation=HttpHeader;Domain=;UserName=;ProxyMode=NoProxy;ProxyUsername=;ProxyServer=;ProxyServerPort=0;ThrottleRate=0;ServiceTimeout=120;RetryOnIntermittentErrors=True;ChunkSize=0;CertificateLocation=Store;PathToCertificate=;IgnoreCertificateErrors=False;CustomHeaders={};HttpMethod=POST" />
+          ConnectionString="BaseUrl=http://localhost:9200/;AuthenticationMode=Credentials;PathToTokenFile=;AccessTokenRequestLocation=HttpHeader;Domain=;UserName=;ProxyMode=NoProxy;ProxyUsername=;ProxyServer=;ProxyServerPort=0;ThrottleRate=0;ServiceTimeout=120;RetryOnIntermittentErrors=True;ChunkSize=0;CertificateLocation=Store;CertificateSubject=;PathToCertificate=;IgnoreCertificateErrors=False;CustomHeaders={};HttpMethod=POST" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -801,18 +801,18 @@
               </outputs>
             </component>
             <component
-              refId="Package\Tâche de flux de données\indexingRapprochements"
+              refId="Package\Tâche de flux de données\indexationRapprochements"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="KingswaySoft Inc.; http://www.kingswaysoft.com; support@kingswaysoft.com; Copyright (c) 2011-2018 KingswaySoft Inc."
               description="Create a JSON document from column data and send it in an HTTP request or save it to a file."
-              name="indexingRapprochements"
+              name="indexationRapprochements"
               usesDispositions="true"
               validateExternalMetadata="False"
-              version="4">
+              version="3">
               <properties>
                 <property
                   dataType="System.String"
-                  name="Design">[{"JsonName":"Input1 (JSON Source)","IdentifierName":"Input1 (JSON Source)","JsonType":2,"IsInput":true,"StaticValue":null,"Children":[{"JsonName":"CategorieContratAr","IdentifierName":"CategorieContratAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"CategorieContratFr","IdentifierName":"CategorieContratFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"CommuneAr","IdentifierName":"CommuneAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"CommuneFr","IdentifierName":"CommuneFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"DateInscription","IdentifierName":"DateInscription","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"DemandeurId","IdentifierName":"DemandeurId","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"DispositifAr","IdentifierName":"DispositifAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"DispositifFr","IdentifierName":"DispositifFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"Email","IdentifierName":"Email","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"Experience","IdentifierName":"Experience","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"MetierAr","IdentifierName":"MetierAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"MetierFr","IdentifierName":"MetierFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"NiveauInstructionAr","IdentifierName":"NiveauInstructionAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"NiveauInstructionFr","IdentifierName":"NiveauInstructionFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"NiveauQualificationAr","IdentifierName":"NiveauQualificationAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"NiveauQualificationFr","IdentifierName":"NiveauQualificationFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"NomAr","IdentifierName":"NomAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"NomFr","IdentifierName":"NomFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"NombreCandidats","IdentifierName":"NombreCandidats","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"NombrePlacesLibres","IdentifierName":"NombrePlacesLibres","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"NombrePostesCree","IdentifierName":"NombrePostesCree","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"OffreId","IdentifierName":"OffreId","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"PrenomAr","IdentifierName":"PrenomAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"PrenomFr","IdentifierName":"PrenomFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"RaisonSociale","IdentifierName":"RaisonSociale","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"RapprochementId","IdentifierName":"RapprochementId","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"TauxRapprochement","IdentifierName":"TauxRapprochement","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"TypeContratAr","IdentifierName":"TypeContratAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"TypeContratFr","IdentifierName":"TypeContratFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"WilayaAr","IdentifierName":"WilayaAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"WilayaFr","IdentifierName":"WilayaFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]}]}]</property>
+                  name="Design">[{"JsonName":"Input1 (getRapprochements)","IdentifierName":"Input1 (getRapprochements)","JsonType":2,"IsInput":true,"StaticValue":null,"Children":[{"JsonName":"CategorieContratAr","IdentifierName":"CategorieContratAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"CategorieContratFr","IdentifierName":"CategorieContratFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"CommuneAr","IdentifierName":"CommuneAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"CommuneFr","IdentifierName":"CommuneFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"DateInscription","IdentifierName":"DateInscription","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"DemandeurId","IdentifierName":"DemandeurId","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"DispositifAr","IdentifierName":"DispositifAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"DispositifFr","IdentifierName":"DispositifFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"Email","IdentifierName":"Email","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"Experience","IdentifierName":"Experience","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"MetierAr","IdentifierName":"MetierAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"MetierFr","IdentifierName":"MetierFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"NiveauInstructionAr","IdentifierName":"NiveauInstructionAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"NiveauInstructionFr","IdentifierName":"NiveauInstructionFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"NiveauQualificationAr","IdentifierName":"NiveauQualificationAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"NiveauQualificationFr","IdentifierName":"NiveauQualificationFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"NomAr","IdentifierName":"NomAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"NomFr","IdentifierName":"NomFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"NombreCandidats","IdentifierName":"NombreCandidats","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"NombrePlacesLibres","IdentifierName":"NombrePlacesLibres","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"NombrePostesCree","IdentifierName":"NombrePostesCree","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"OffreId","IdentifierName":"OffreId","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"PrenomAr","IdentifierName":"PrenomAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"PrenomFr","IdentifierName":"PrenomFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"RaisonSociale","IdentifierName":"RaisonSociale","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"RapprochementId","IdentifierName":"RapprochementId","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"TauxRapprochement","IdentifierName":"TauxRapprochement","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"TypeContratAr","IdentifierName":"TypeContratAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"TypeContratFr","IdentifierName":"TypeContratFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"WilayaAr","IdentifierName":"WilayaAr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]},{"JsonName":"WilayaFr","IdentifierName":"WilayaFr","JsonType":3,"IsInput":false,"StaticValue":null,"Children":[]}]}]</property>
                 <property
                   dataType="System.Boolean"
                   description="When true the output XML has line breaks and indents for human readability. When false the output XML is a single line of text."
@@ -844,7 +844,7 @@
                   dataType="System.String"
                   description="The relative path of the HTTP request that will be combined with the base path from the connection manager."
                   expressionType="Notify"
-                  name="RelativePath">{"IsExpression":false,"Value":"raps/rap/[RapprochementId]"}</property>
+                  name="RelativePath">{"IsExpression":false,"Value":"rapprochements/rapprochement/[RapprochementId]"}</property>
                 <property
                   dataType="System.String"
                   description="The body of the HTTP request."
@@ -879,7 +879,7 @@
                   dataType="System.String"
                   description="Specifies the path to the Item to get the json document from."
                   expressionType="Notify"
-                  name="LocalFilePath">{"IsExpression":false,"Value":""}</property>
+                  name="LocalFilePath"></property>
                 <property
                   dataType="System.String"
                   description="The encoding that will be used to read the json document."
@@ -891,7 +891,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Tâche de flux de données\indexingRapprochements.Connections[HTTP (KingswaySoft)]"
+                  refId="Package\Tâche de flux de données\indexationRapprochements.Connections[HTTP (KingswaySoft)]"
                   connectionManagerID="Package.ConnectionManagers[Elasticsearch]"
                   connectionManagerRefId="Package.ConnectionManagers[Elasticsearch]"
                   description="ProductivityPack"
@@ -899,10 +899,10 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)]"
+                  refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
-                  name="Input1 (JSON Source)">
+                  name="Input1 (getRapprochements)">
                   <properties>
                     <property
                       dataType="System.String"
@@ -922,35 +922,564 @@
                   </properties>
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[_JSON]"
-                      cachedDataType="nText"
-                      cachedName="_JSON"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[_JSON]">
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[RapprochementId]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="RapprochementId"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[RapprochementId]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
-                          description="AsyncExternalMetaDataColumnID"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\-1:invalid}</property>
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[RapprochementId]}</property>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[_JSON]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[_JSON]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[_JSON]}</property>
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[RapprochementId]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[_RowIndex]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[TauxRapprochement]"
+                      cachedDataType="r8"
+                      cachedName="TauxRapprochement"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[TauxRapprochement]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[TauxRapprochement]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[TauxRapprochement]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[DemandeurId]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DemandeurId"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[DemandeurId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[DemandeurId]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[DemandeurId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[NomAr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="NomAr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[NomAr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[NomAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NomAr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[NomFr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="NomFr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[NomFr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[NomFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NomFr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[PrenomAr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PrenomAr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[PrenomAr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[PrenomAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[PrenomAr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[PrenomFr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PrenomFr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[PrenomFr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[PrenomFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[PrenomFr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[Email]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Email"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[Email]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[Email]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[Email]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[OffreId]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="OffreId"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[OffreId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[OffreId]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[OffreId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[NombreCandidats]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="NombreCandidats"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[NombreCandidats]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[NombreCandidats]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NombreCandidats]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[NombrePostesCree]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="NombrePostesCree"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[NombrePostesCree]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[NombrePostesCree]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NombrePostesCree]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[DateInscription]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DateInscription"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[DateInscription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[DateInscription]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[DateInscription]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[NombrePlacesLibres]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="NombrePlacesLibres"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[NombrePlacesLibres]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[NombrePlacesLibres]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NombrePlacesLibres]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[Experience]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Experience"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[Experience]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[Experience]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[Experience]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[CommuneAr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CommuneAr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[CommuneAr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[CommuneAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[CommuneAr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[CommuneFr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CommuneFr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[CommuneFr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[CommuneFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[CommuneFr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[WilayaAr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="WilayaAr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[WilayaAr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[WilayaAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[WilayaAr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[WilayaFr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="WilayaFr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[WilayaFr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[WilayaFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[WilayaFr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[RaisonSociale]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RaisonSociale"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[RaisonSociale]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[RaisonSociale]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[RaisonSociale]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[MetierAr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MetierAr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[MetierAr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[MetierAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[MetierAr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[MetierFr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MetierFr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[MetierFr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[MetierFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[MetierFr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[NiveauInstructionAr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="NiveauInstructionAr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[NiveauInstructionAr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[NiveauInstructionAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NiveauInstructionAr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[NiveauInstructionFr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="NiveauInstructionFr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[NiveauInstructionFr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[NiveauInstructionFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NiveauInstructionFr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[NiveauQualificationAr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="NiveauQualificationAr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[NiveauQualificationAr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[NiveauQualificationAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NiveauQualificationAr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[NiveauQualificationFr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="NiveauQualificationFr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[NiveauQualificationFr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[NiveauQualificationFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NiveauQualificationFr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[TypeContratFr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TypeContratFr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[TypeContratFr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[TypeContratFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[TypeContratFr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[TypeContratAr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TypeContratAr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[TypeContratAr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[TypeContratAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[TypeContratAr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[CategorieContratFr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CategorieContratFr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[CategorieContratFr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[CategorieContratFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[CategorieContratFr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[CategorieContratAr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CategorieContratAr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[CategorieContratAr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[CategorieContratAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[CategorieContratAr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[DispositifFr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DispositifFr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[DispositifFr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[DispositifFr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[DispositifFr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[DispositifAr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DispositifAr"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[DispositifAr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[DispositifAr]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The asynchronous output column of this input column."
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[DispositifAr]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[_RowIndex]"
                       cachedDataType="i4"
                       cachedName="_RowIndex"
                       lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[_RowIndex]">
@@ -964,1047 +1493,188 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[_RowIndex]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[_RowIndex]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[_RowIndex]}</property>
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[_RowIndex]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[RapprochementId]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="RapprochementId"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[RapprochementId]">
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].Columns[_JSON]"
+                      cachedDataType="nText"
+                      cachedName="_JSON"
+                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[_JSON]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[RapprochementId]}</property>
+                          description="AsyncExternalMetaDataColumnID"
+                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\-1:invalid}</property>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[RapprochementId]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[RapprochementId]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[RapprochementId]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[TauxRapprochement]"
-                      cachedDataType="r8"
-                      cachedName="TauxRapprochement"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[TauxRapprochement]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[TauxRapprochement]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[TauxRapprochement]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[TauxRapprochement]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[TauxRapprochement]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[DemandeurId]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="DemandeurId"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[DemandeurId]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[DemandeurId]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[DemandeurId]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[DemandeurId]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[DemandeurId]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[NomAr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="NomAr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[NomAr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[NomAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NomAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NomAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NomAr]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[NomFr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="NomFr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[NomFr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[NomFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NomFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NomFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NomFr]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[PrenomAr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="PrenomAr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[PrenomAr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[PrenomAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[PrenomAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[PrenomAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[PrenomAr]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[PrenomFr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="PrenomFr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[PrenomFr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[PrenomFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[PrenomFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[PrenomFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[PrenomFr]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[Email]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Email"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[Email]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[Email]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[Email]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[Email]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[Email]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[OffreId]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="OffreId"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[OffreId]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[OffreId]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[OffreId]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[OffreId]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[OffreId]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[NombreCandidats]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="NombreCandidats"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[NombreCandidats]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[NombreCandidats]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NombreCandidats]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NombreCandidats]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NombreCandidats]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[NombrePostesCree]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="NombrePostesCree"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[NombrePostesCree]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[NombrePostesCree]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NombrePostesCree]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NombrePostesCree]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NombrePostesCree]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[DateInscription]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="DateInscription"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[DateInscription]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[DateInscription]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[DateInscription]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[DateInscription]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[DateInscription]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[NombrePlacesLibres]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="NombrePlacesLibres"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[NombrePlacesLibres]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[NombrePlacesLibres]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NombrePlacesLibres]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NombrePlacesLibres]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NombrePlacesLibres]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[Experience]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Experience"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[Experience]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[Experience]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[Experience]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[Experience]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[Experience]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[CommuneAr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="CommuneAr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[CommuneAr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[CommuneAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[CommuneAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[CommuneAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[CommuneAr]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[CommuneFr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="CommuneFr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[CommuneFr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[CommuneFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[CommuneFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[CommuneFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[CommuneFr]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[WilayaAr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="WilayaAr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[WilayaAr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[WilayaAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[WilayaAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[WilayaAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[WilayaAr]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[WilayaFr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="WilayaFr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[WilayaFr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[WilayaFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[WilayaFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[WilayaFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[WilayaFr]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[RaisonSociale]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="RaisonSociale"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[RaisonSociale]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[RaisonSociale]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[RaisonSociale]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[RaisonSociale]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[RaisonSociale]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[MetierAr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="MetierAr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[MetierAr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[MetierAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[MetierAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[MetierAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[MetierAr]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[MetierFr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="MetierFr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[MetierFr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[MetierFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[MetierFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[MetierFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[MetierFr]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[NiveauInstructionAr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="NiveauInstructionAr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[NiveauInstructionAr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[NiveauInstructionAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NiveauInstructionAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NiveauInstructionAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NiveauInstructionAr]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[NiveauInstructionFr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="NiveauInstructionFr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[NiveauInstructionFr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[NiveauInstructionFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NiveauInstructionFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NiveauInstructionFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NiveauInstructionFr]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[NiveauQualificationAr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="NiveauQualificationAr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[NiveauQualificationAr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[NiveauQualificationAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NiveauQualificationAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NiveauQualificationAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NiveauQualificationAr]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[NiveauQualificationFr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="NiveauQualificationFr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[NiveauQualificationFr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[NiveauQualificationFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NiveauQualificationFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NiveauQualificationFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NiveauQualificationFr]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[TypeContratFr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="TypeContratFr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[TypeContratFr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[TypeContratFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[TypeContratFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[TypeContratFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[TypeContratFr]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[TypeContratAr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="TypeContratAr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[TypeContratAr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[TypeContratAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[TypeContratAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[TypeContratAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[TypeContratAr]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[CategorieContratFr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="CategorieContratFr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[CategorieContratFr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[CategorieContratFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[CategorieContratFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[CategorieContratFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[CategorieContratFr]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[CategorieContratAr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="CategorieContratAr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[CategorieContratAr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[CategorieContratAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[CategorieContratAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[CategorieContratAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[CategorieContratAr]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[DispositifFr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="DispositifFr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[DispositifFr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[DispositifFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[DispositifFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[DispositifFr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[DispositifFr]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].Columns[DispositifAr]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="DispositifAr"
-                      lineageId="Package\Tâche de flux de données\getRapprochements.Outputs[Root].Columns[DispositifAr]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          name="AsyncExternalMetaDataColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[DispositifAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous output column of this input column."
-                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[DispositifAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous error output column of this input column."
-                          name="AsyncErrorOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[DispositifAr]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The asynchronous default output column of this input column."
-                          name="AsyncDefaultOutputColumnId">#{Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[DispositifAr]}</property>
+                          name="AsyncOutputColumnID">#{Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[_JSON]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[RapprochementId]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[RapprochementId]"
                       dataType="wstr"
                       length="100"
                       name="RapprochementId" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[TauxRapprochement]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[TauxRapprochement]"
                       dataType="r8"
                       name="TauxRapprochement" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[DemandeurId]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[DemandeurId]"
                       dataType="wstr"
                       length="255"
                       name="DemandeurId" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[NomAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[NomAr]"
                       dataType="wstr"
                       length="255"
                       name="NomAr" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[NomFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[NomFr]"
                       dataType="wstr"
                       length="255"
                       name="NomFr" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[PrenomAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[PrenomAr]"
                       dataType="wstr"
                       length="255"
                       name="PrenomAr" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[PrenomFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[PrenomFr]"
                       dataType="wstr"
                       length="255"
                       name="PrenomFr" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[Email]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[Email]"
                       dataType="wstr"
                       length="255"
                       name="Email" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[OffreId]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[OffreId]"
                       dataType="wstr"
                       length="255"
                       name="OffreId" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[NombreCandidats]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[NombreCandidats]"
                       dataType="wstr"
                       length="255"
                       name="NombreCandidats" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[NombrePostesCree]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[NombrePostesCree]"
                       dataType="wstr"
                       length="255"
                       name="NombrePostesCree" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[DateInscription]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[DateInscription]"
                       dataType="wstr"
                       length="255"
                       name="DateInscription" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[NombrePlacesLibres]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[NombrePlacesLibres]"
                       dataType="wstr"
                       length="255"
                       name="NombrePlacesLibres" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[Experience]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[Experience]"
                       dataType="wstr"
                       length="255"
                       name="Experience" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[CommuneAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[CommuneAr]"
                       dataType="wstr"
                       length="255"
                       name="CommuneAr" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[CommuneFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[CommuneFr]"
                       dataType="wstr"
                       length="255"
                       name="CommuneFr" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[WilayaAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[WilayaAr]"
                       dataType="wstr"
                       length="255"
                       name="WilayaAr" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[WilayaFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[WilayaFr]"
                       dataType="wstr"
                       length="255"
                       name="WilayaFr" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[RaisonSociale]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[RaisonSociale]"
                       dataType="wstr"
                       length="255"
                       name="RaisonSociale" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[MetierAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[MetierAr]"
                       dataType="wstr"
                       length="255"
                       name="MetierAr" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[MetierFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[MetierFr]"
                       dataType="wstr"
                       length="255"
                       name="MetierFr" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[NiveauInstructionAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[NiveauInstructionAr]"
                       dataType="wstr"
                       length="255"
                       name="NiveauInstructionAr" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[NiveauInstructionFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[NiveauInstructionFr]"
                       dataType="wstr"
                       length="255"
                       name="NiveauInstructionFr" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[NiveauQualificationAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[NiveauQualificationAr]"
                       dataType="wstr"
                       length="255"
                       name="NiveauQualificationAr" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[NiveauQualificationFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[NiveauQualificationFr]"
                       dataType="wstr"
                       length="255"
                       name="NiveauQualificationFr" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[TypeContratFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[TypeContratFr]"
                       dataType="wstr"
                       length="255"
                       name="TypeContratFr" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[TypeContratAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[TypeContratAr]"
                       dataType="wstr"
                       length="255"
                       name="TypeContratAr" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[CategorieContratFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[CategorieContratFr]"
                       dataType="wstr"
                       length="255"
                       name="CategorieContratFr" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[CategorieContratAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[CategorieContratAr]"
                       dataType="wstr"
                       length="255"
                       name="CategorieContratAr" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[DispositifFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[DispositifFr]"
                       dataType="wstr"
                       length="255"
                       name="DispositifFr" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)].ExternalColumns[DispositifAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)].ExternalColumns[DispositifAr]"
                       dataType="wstr"
                       length="255"
                       name="DispositifAr" />
                   </externalMetadataColumns>
                 </input>
                 <input
-                  refId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input2]"
+                  refId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input2]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   name="Input2">
@@ -2031,689 +1701,369 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output]"
+                  refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output]"
                   isErrorOut="true"
                   name="Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[ErrorCode]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[ErrorColumn]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[ErrorMessage]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[ColumnName]"
                       dataType="wstr"
                       length="4000"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[ErrorMessage]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[ColumnName]"
+                      name="ColumnName" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[ParentId]"
+                      dataType="wstr"
+                      length="4000"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[ParentId]"
+                      name="ParentId" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[Input]"
+                      dataType="wstr"
+                      length="4000"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[Input]"
+                      name="Input" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[ParentInput]"
+                      dataType="wstr"
+                      length="4000"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[ParentInput]"
+                      name="ParentInput" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[ErrorMessage]"
+                      dataType="wstr"
+                      length="4000"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[ErrorMessage]"
                       name="ErrorMessage" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[HttpBody]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[HttpBody]"
                       dataType="nText"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[HttpBody]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[HttpBody]"
                       name="HttpBody" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[HttpResponseCode]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[HttpResponseCode]"
                       dataType="i4"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[HttpResponseCode]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[HttpResponseCode]"
                       name="HttpResponseCode" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[HttpResponseCodeName]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[HttpResponseCodeName]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[HttpResponseCodeName]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Error Output].Columns[HttpResponseCodeName]"
                       name="HttpResponseCodeName" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[RapprochementId]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="100"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[RapprochementId]"
-                      name="RapprochementId"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[TauxRapprochement]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[TauxRapprochement]"
-                      name="TauxRapprochement"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[DemandeurId]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[DemandeurId]"
-                      name="DemandeurId"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NomAr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NomAr]"
-                      name="NomAr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NomFr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NomFr]"
-                      name="NomFr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[PrenomAr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[PrenomAr]"
-                      name="PrenomAr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[PrenomFr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[PrenomFr]"
-                      name="PrenomFr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[Email]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[Email]"
-                      name="Email"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[OffreId]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[OffreId]"
-                      name="OffreId"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NombreCandidats]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NombreCandidats]"
-                      name="NombreCandidats"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NombrePostesCree]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NombrePostesCree]"
-                      name="NombrePostesCree"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[DateInscription]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[DateInscription]"
-                      name="DateInscription"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NombrePlacesLibres]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NombrePlacesLibres]"
-                      name="NombrePlacesLibres"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[Experience]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[Experience]"
-                      name="Experience"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[CommuneAr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[CommuneAr]"
-                      name="CommuneAr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[CommuneFr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[CommuneFr]"
-                      name="CommuneFr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[WilayaAr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[WilayaAr]"
-                      name="WilayaAr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[WilayaFr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[WilayaFr]"
-                      name="WilayaFr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[RaisonSociale]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[RaisonSociale]"
-                      name="RaisonSociale"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[MetierAr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[MetierAr]"
-                      name="MetierAr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[MetierFr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[MetierFr]"
-                      name="MetierFr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NiveauInstructionAr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NiveauInstructionAr]"
-                      name="NiveauInstructionAr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NiveauInstructionFr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NiveauInstructionFr]"
-                      name="NiveauInstructionFr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NiveauQualificationAr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NiveauQualificationAr]"
-                      name="NiveauQualificationAr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NiveauQualificationFr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[NiveauQualificationFr]"
-                      name="NiveauQualificationFr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[TypeContratFr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[TypeContratFr]"
-                      name="TypeContratFr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[TypeContratAr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[TypeContratAr]"
-                      name="TypeContratAr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[CategorieContratFr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[CategorieContratFr]"
-                      name="CategorieContratFr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[CategorieContratAr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[CategorieContratAr]"
-                      name="CategorieContratAr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[DispositifFr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[DispositifFr]"
-                      name="DispositifFr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[DispositifAr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[DispositifAr]"
-                      name="DispositifAr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[_RowIndex]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[_RowIndex]"
-                      name="_RowIndex"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[_JSON]"
-                      dataType="nText"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Error Output].Columns[_JSON]"
-                      name="_JSON"
-                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output]"
+                  refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output]"
                   name="Default Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[_JSON]"
-                      dataType="nText"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[_JSON]"
-                      name="_JSON"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[_RowIndex]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[_RowIndex]"
-                      name="_RowIndex"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[RapprochementId]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[RapprochementId]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="100"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[RapprochementId]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[RapprochementId]"
                       name="RapprochementId"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[TauxRapprochement]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[TauxRapprochement]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[TauxRapprochement]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[TauxRapprochement]"
                       name="TauxRapprochement"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[DemandeurId]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[DemandeurId]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[DemandeurId]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[DemandeurId]"
                       name="DemandeurId"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NomAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NomAr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NomAr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NomAr]"
                       name="NomAr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NomFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NomFr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NomFr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NomFr]"
                       name="NomFr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[PrenomAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[PrenomAr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[PrenomAr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[PrenomAr]"
                       name="PrenomAr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[PrenomFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[PrenomFr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[PrenomFr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[PrenomFr]"
                       name="PrenomFr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[Email]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[Email]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[Email]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[Email]"
                       name="Email"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[OffreId]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[OffreId]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[OffreId]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[OffreId]"
                       name="OffreId"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NombreCandidats]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NombreCandidats]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NombreCandidats]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NombreCandidats]"
                       name="NombreCandidats"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NombrePostesCree]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NombrePostesCree]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NombrePostesCree]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NombrePostesCree]"
                       name="NombrePostesCree"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[DateInscription]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[DateInscription]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[DateInscription]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[DateInscription]"
                       name="DateInscription"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NombrePlacesLibres]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NombrePlacesLibres]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NombrePlacesLibres]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NombrePlacesLibres]"
                       name="NombrePlacesLibres"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[Experience]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[Experience]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[Experience]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[Experience]"
                       name="Experience"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[CommuneAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[CommuneAr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[CommuneAr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[CommuneAr]"
                       name="CommuneAr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[CommuneFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[CommuneFr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[CommuneFr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[CommuneFr]"
                       name="CommuneFr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[WilayaAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[WilayaAr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[WilayaAr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[WilayaAr]"
                       name="WilayaAr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[WilayaFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[WilayaFr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[WilayaFr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[WilayaFr]"
                       name="WilayaFr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[RaisonSociale]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[RaisonSociale]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[RaisonSociale]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[RaisonSociale]"
                       name="RaisonSociale"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[MetierAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[MetierAr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[MetierAr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[MetierAr]"
                       name="MetierAr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[MetierFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[MetierFr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[MetierFr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[MetierFr]"
                       name="MetierFr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NiveauInstructionAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NiveauInstructionAr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NiveauInstructionAr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NiveauInstructionAr]"
                       name="NiveauInstructionAr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NiveauInstructionFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NiveauInstructionFr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NiveauInstructionFr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NiveauInstructionFr]"
                       name="NiveauInstructionFr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NiveauQualificationAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NiveauQualificationAr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NiveauQualificationAr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NiveauQualificationAr]"
                       name="NiveauQualificationAr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NiveauQualificationFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NiveauQualificationFr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[NiveauQualificationFr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[NiveauQualificationFr]"
                       name="NiveauQualificationFr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[TypeContratFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[TypeContratFr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[TypeContratFr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[TypeContratFr]"
                       name="TypeContratFr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[TypeContratAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[TypeContratAr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[TypeContratAr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[TypeContratAr]"
                       name="TypeContratAr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[CategorieContratFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[CategorieContratFr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[CategorieContratFr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[CategorieContratFr]"
                       name="CategorieContratFr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[CategorieContratAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[CategorieContratAr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[CategorieContratAr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[CategorieContratAr]"
                       name="CategorieContratAr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[DispositifFr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[DispositifFr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[DispositifFr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[DispositifFr]"
                       name="DispositifFr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[DispositifAr]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[DispositifAr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Default Output].Columns[DispositifAr]"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[DispositifAr]"
                       name="DispositifAr"
                       truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Orphaned Children Error Output]"
-                  isErrorOut="true"
-                  name="Orphaned Children Error Output">
-                  <outputColumns>
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Orphaned Children Error Output].Columns[ErrorCode]"
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[_RowIndex]"
                       dataType="i4"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Orphaned Children Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[_RowIndex]"
+                      name="_RowIndex"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Orphaned Children Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Orphaned Children Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Orphaned Children Error Output].Columns[Input Name]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Orphaned Children Error Output].Columns[Input Name]"
-                      name="Input Name" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Orphaned Children Error Output].Columns[Column Name]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Orphaned Children Error Output].Columns[Column Name]"
-                      name="Column Name" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Orphaned Children Error Output].Columns[Column Value]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Orphaned Children Error Output].Columns[Column Value]"
-                      name="Column Value" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Orphaned Children Error Output].Columns[Parent Input Name]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Orphaned Children Error Output].Columns[Parent Input Name]"
-                      name="Parent Input Name" />
-                    <outputColumn
-                      refId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Orphaned Children Error Output].Columns[Parent Column Name]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Tâche de flux de données\indexingRapprochements.Outputs[Orphaned Children Error Output].Columns[Parent Column Name]"
-                      name="Parent Column Name" />
+                      refId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[_JSON]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tâche de flux de données\indexationRapprochements.Outputs[Default Output].Columns[_JSON]"
+                      name="_JSON"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -2723,7 +2073,7 @@
           <paths>
             <path
               refId="Package\Tâche de flux de données.Paths[Root]"
-              endId="Package\Tâche de flux de données\indexingRapprochements.Inputs[Input1 (JSON Source)]"
+              endId="Package\Tâche de flux de données\indexationRapprochements.Inputs[Input1 (getRapprochements)]"
               name="Root"
               startId="Package\Tâche de flux de données\getRapprochements.Outputs[Root]" />
           </paths>
@@ -2756,39 +2106,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="204,42"
-          Id="Package\Tâche de flux de données\indexingRapprochements"
-          TopLeft="284,271" />
-        <NodeLayout
           Size="178,42"
           Id="Package\Tâche de flux de données\getRapprochements"
           TopLeft="287,66" />
+        <NodeLayout
+          Size="213,42"
+          Id="Package\Tâche de flux de données\indexationRapprochements"
+          TopLeft="272,259" />
         <EdgeLayout
           Id="Package\Tâche de flux de données.Paths[Root]"
-          TopLeft="376,108">
+          TopLeft="377.25,108">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10,163"
+              EndConnector="0,151"
               Start="0,0"
-              End="10,155.5">
+              End="0,143.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,77.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,77.5"
-                    Point2="0,81.5"
-                    Point3="4,81.5" />
-                  <mssgle:LineSegment
-                    End="6,81.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6,81.5"
-                    Point2="10,81.5"
-                    Point3="10,85.5" />
-                  <mssgle:LineSegment
-                    End="10,155.5" />
+                    End="0,143.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
